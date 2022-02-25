@@ -52,7 +52,7 @@ class RuntimeMockup extends Runtime
         $this->ranCommands[] = $cmd;
         $this->ranCommandTimeouts[$cmd] = $timeout;
 
-        $process = new ProcessMockup($cmd);
+        $process = new ProcessMockup([$cmd]);
         $process->forceFail = $this->forceFail;
         $process->setTimeout($timeout);
         $process->run();
